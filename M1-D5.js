@@ -35,47 +35,83 @@ let Me = {
     surname: "Motricala",
     age: 30,
 };
-console.log(Me)
+console.log(Me);
 
 /* Ex.E 
     Programmatically remove the Age from the previously create object Me
 */
 delete Me.age
-console.log(Me)
+console.log(Me);
 /* Ex.F 
    Programmatically add to the object Me an array "skills" that contains the programming languages that you know
 */
 let skillsArray = ["JavaScript", "HTML", "CSS"]
 Me.skills = skillsArray;
-console.log(Me)
+console.log(Me);
 
 /* Ex.G 
    Programmatically remove the last skill from the array "skills" inside of the "me" object
 */
+skillsArray.pop();
+console.log(Me);
 
 // JS Functions
 /* Ex.1
     Write the function Dice that randomize an integer number between 1 and 6
 */
 
+function Dice() {
+    return Math.floor(Math.random() * 7);
+}
+console.log('FUNZIONE DICE: ', Dice());
+
 /* Ex.2 
     Write the function WhoIsBigger that receives 2 numbers and returns the bigger of the 2
 */
 
+function WhoIsBigger(x, y) {
+    if (x >= y) {
+        return x;
+    } else if (x < y) {
+        return y;
+    }
+}
+console.log(WhoIsBigger(2, 3));
 /* Ex.3
     Write the function SplitMe that receives a String and returns an array with every word in that string
     Ex. SplitMe("I love coding") => returns [ "I","Love","Coding"]
 */
-
+function SplitMe(word) {
+    return word.split(" ");
+}
+console.log(SplitMe('I Love Coding'));
 /* Ex.4
-    Write the function DeleteOne that receives a string and a boolean. If the boolean is true, should return the string without the first letter, otherwise should remove the last one
+    Write the function DeleteOne that receives a string and a boolean. If the boolean is true, 
+    should return the string without the first letter, otherwise should remove the last one
 */
+function DeleteOne(word, flag) {
+    if (flag) {
+        return word.substring(1, word.length);
+    }
+    return word.substring(0, word.length - 1);
 
+}
+console.log(DeleteOne('Ciao bella', true));
 /* Ex.5
    Write the function OnlyLetters that receives a string, removes all the numbers and returns it.
    Ex.: OnlyLetters("I love 123 whatever")  => returns "I love whatever"
 */
-
+function OnlyLetters(word) {
+    let result = '';
+    let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    for (var i = 0; i < word.length; i++) {
+        if (numbers.includes(word.charAt(i))) {} else {
+            result = result + word.charAt(i);
+        }
+    }
+    return result;
+}
+console.log(OnlyLetters("I love 123 whatever 638"));
 /* Ex.6 
    Write the function IsThisAnEmail that receives a string and returns true if the string is a valid email.
 */
