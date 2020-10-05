@@ -112,6 +112,26 @@ function OnlyLetters(word) {
     return result;
 }
 console.log(OnlyLetters("I love 123 whatever 638"));
+
+// correzione conStefano
+let onlyLetters = function (str) {
+    let words = str.split(" ");
+
+    for (let i = 0; i < words.lenght; i++) {
+        let letters = words[i].split("");
+        let noNumbers = [];
+
+        for (let j = 0; j < letters.lenght; j++) {
+            if (isNaN(parseInt(letters[j]))) {
+                numbers.push(letters[j]);
+            }
+        }
+        console.log(noNumbers);
+    }
+    return words;
+}
+console.log(onlyLetters("I love 123 whatever"))
+
 /* Ex.6 
    Write the function IsThisAnEmail that receives a string and returns true if the string is a valid email.
 */
